@@ -1,0 +1,13 @@
+header{
+    border-bottom: 1px solid #3cff00;
+    margin-bottom: 25px;
+}
+
+.nav-link-active a{
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+#header_logo {
+    height: 80px;
+}
