@@ -65,6 +65,3 @@ build-docker-container:
   script:
   - IMAGE_NAME="localhost:5000/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
-  - echo "Deploying application..."
-  - docker run -itd --name lr-culinair -p 8081:80 $IMAGE_NAME
-  - echo "Application successfully deployed.
