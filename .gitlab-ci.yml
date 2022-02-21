@@ -13,7 +13,9 @@
 #
 # For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
 # image: angular/ngcontainer
-image: robindbl/angular-cli
+#image: robindbl/angular-cli
+image: docker:19.03.12
+
 
 stages:          # List of stages for jobs, and their order of execution
   #- build
@@ -28,16 +30,35 @@ stages:          # List of stages for jobs, and their order of execution
 #    - ng build
 #    - echo "Compile complete."
 
-docker-build:
-# Official docker image.
- image: docker:stable
- only :
-  - master
- stage: package
- script:
+
+variables:
+  # When you use the dind service, you must instruct Docker to talk with
+  # the daemon started inside of the service. The daemon is available
+  # with a network connection instead of the default
+  # /var/run/docker.sock socket. Docker 19.03 does this automatically
+  # by setting the DOCKER_HOST in
+  # https://github.com/docker-library/docker/blob/d45051476babc297257df490d22cbd806f1b11e4/19.03/docker-entrypoint.sh#L23-L29
+  #
+  # The 'docker' hostname is the alias of the service container as described at
+  # https://docs.gitlab.com/ee/ci/services/#accessing-the-services.
+  #
+  # Specify to Docker where to create the certificates. Docker
+  # creates them automatically on boot, and creates
+  # `/certs/client` to share between the service and job
+  # container, thanks to volume mount from config.toml
+  DOCKER_TLS_CERTDIR: "/certs"
+
+services:
+  - docker:19.03.12-dind
+
+before_script:
+  - docker info
+
+build-docker-container:
+  stage: package
+  script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
-  - docker push "$IMAGE_NAME"
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
