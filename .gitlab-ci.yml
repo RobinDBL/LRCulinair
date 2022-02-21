@@ -58,7 +58,6 @@ build-docker-container:
 
   before_script:
     - docker info
-    - echo "$DOCKER_REGISTRY_PASS" | docker login $DOCKER_REGISTRY --username $DOCKER_REGISTRY_USER --password-stdin
   
   image: docker:19.03.12
   stage: package
@@ -68,7 +67,6 @@ build-docker-container:
   script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
-  - docker push robindbl/lr-culinair:latest
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
