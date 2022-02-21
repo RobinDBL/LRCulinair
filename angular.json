@@ -102,6 +102,12 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "ngx-deploy-docker:deploy",
+          "options": {
+            "account": "RobinDBL"
+          }
         }
       }
     }
