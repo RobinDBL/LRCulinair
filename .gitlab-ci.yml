@@ -38,7 +38,7 @@ docker-build:
   - docker:dind
  script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
-  - docker build -f . --tag $IMAGE_NAME
+  - docker build . --tag $IMAGE_NAME
   - docker push "$IMAGE_NAME"
 
 deploy-job:      # This job runs in the deploy stage.
