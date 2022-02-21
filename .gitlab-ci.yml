@@ -47,13 +47,13 @@ variables:
   # container, thanks to volume mount from config.toml
   DOCKER_TLS_CERTDIR: "/certs"
 
-services:
-  - docker:19.03.12-dind
-
-before_script:
-  - docker info
 
 build-docker-container:
+  services:
+    - docker:19.03.12-dind
+
+  before_script:
+    - docker info
   image: docker:19.03.12
   stage: package
   script:
