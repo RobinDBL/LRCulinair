@@ -63,5 +63,5 @@ build-docker-container:
     - job: build-job
       artifacts: true
   script:
-  - IMAGE_NAME="localhost:5000/lr-culinair:latest"
+  - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
