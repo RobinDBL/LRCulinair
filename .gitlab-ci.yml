@@ -34,8 +34,8 @@ docker-build:
  only :
   - master
  stage: package
- services:
-  - docker:dind
+ before_script:
+  - docker info
  script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
