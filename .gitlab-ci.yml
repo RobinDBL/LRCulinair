@@ -57,19 +57,16 @@ services:
 build-docker-container:
 
   before_script:
-    - docker info
-    - echo "$DOCKER_REGISTRY_PASS" | docker login $DOCKER_REGISTRY --username $DOCKER_REGISTRY_USER --password-stdin
-
-
-  
+    - docker info  
   image: docker:19.03.12
   stage: package
   needs: 
     - job: build-job
       artifacts: true
   script:
-  - IMAGE_NAME="robindbl/lr-culinair:latest"
+  - IMAGE_NAME="localhost:5000/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
+  - docker push $IMAGE_NAME
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
