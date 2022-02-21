@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lrCulinair": {
+    "lr-culinair": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -28,6 +28,7 @@
               "src/assets/images"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/custom-bootstrap.scss",
               "src/styles.css"
             ],
@@ -70,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lrCulinair:build:production"
+              "browserTarget": "lr-culinair:build:production"
             },
             "development": {
-              "browserTarget": "lrCulinair:build:development"
+              "browserTarget": "lr-culinair:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lrCulinair:build"
+            "browserTarget": "lr-culinair:build"
           }
         },
         "test": {
@@ -96,13 +97,20 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "ngx-deploy-docker:deploy",
+          "options": {
+            "account": "robindbl"
           }
         }
       }
     }
   },
-  "defaultProject": "lrCulinair"
+  "defaultProject": "lr-culinair"
 }
