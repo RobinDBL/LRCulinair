@@ -23,6 +23,8 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   image: robindbl/angular-cli
   stage: build
+  artifacts:
+    untracked: true
   script:
     - echo "Compiling the code..."
     - npm install
@@ -56,6 +58,9 @@ build-docker-container:
     - docker info
   image: docker:19.03.12
   stage: package
+  needs: 
+    - job: build-job
+      artifacts: true
   script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
