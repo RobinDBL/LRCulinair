@@ -30,7 +30,7 @@ build-job:       # This job runs in the build stage, which runs first.
   script:
     - echo "Compiling the code..."
     - npm install
-    - ng build
+    - ng build --configuration production
     - echo "Compile complete."
 
 
@@ -66,13 +66,14 @@ build-docker-container:
   script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
+  - docker push robindbl/lr-culinair:latest
 
 deploy-job:      # This job runs in the deploy stage.
-  image: robindbl/angular-cli
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  before_script:
+    - docker stop lr-culinair
+    - docker rm lr-culinair
   script:
     - echo "Deploying application..."
-    - npm install
-    #- ng add ngx-deploy-docker --skip-confirmation
-    - ng deploy
+    - docker run -itd -p 8081:80 --name lr-culinair robindbl/lr-culinair:latest
     - echo "Application successfully deployed."
