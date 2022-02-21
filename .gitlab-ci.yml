@@ -36,11 +36,8 @@ docker-build:
  stage: package
  services:
   - docker:dind
- before_script:
-  - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" 
-    --password-stdin $CI_REGISTRY
  script:
-  - IMAGE_NAME="$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+  - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build --pull -t "$IMAGE_NAME" -f Dockerfile .
   - docker push "$IMAGE_NAME"
 
