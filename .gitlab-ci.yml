@@ -17,6 +17,7 @@ image: robindbl/angular-cli
 
 stages:          # List of stages for jobs, and their order of execution
   - build
+  - package
   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
@@ -26,6 +27,22 @@ build-job:       # This job runs in the build stage, which runs first.
     - npm install
     - ng build
     - echo "Compile complete."
+
+docker-build:
+# Official docker image.
+ image: docker:stable
+ only :
+  - master
+ stage: package
+ services:
+  - docker:dind
+ before_script:
+  - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" 
+    --password-stdin $CI_REGISTRY
+ script:
+  - IMAGE_NAME="$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+  - docker build --pull -t "$IMAGE_NAME" -f Dockerfile .
+  - docker push "$IMAGE_NAME"
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
