@@ -66,7 +66,6 @@ build-docker-container:
   script:
   - IMAGE_NAME="robindbl/lr-culinair:latest"
   - docker build . --tag $IMAGE_NAME
-  - docker push robindbl/lr-culinair:latest
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
