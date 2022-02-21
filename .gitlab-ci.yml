@@ -32,6 +32,6 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - echo "Deploying application..."
     - npm install
-    - ng add ngx-deploy-docker --skip-confirmation
+    #- ng add ngx-deploy-docker --skip-confirmation
     - ng deploy
     - echo "Application successfully deployed."
