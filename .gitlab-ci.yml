@@ -68,11 +68,8 @@ build-docker-container:
   - docker build . --tag $IMAGE_NAME
 
 deploy-job:      # This job runs in the deploy stage.
-  image: robindbl/angular-cli
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   script:
     - echo "Deploying application..."
-    - npm install
-    #- ng add ngx-deploy-docker --skip-confirmation
-    - ng deploy
+    - docker run -itd --name lr-culinair -p 8081:80 robindbl/lr-culiniar
     - echo "Application successfully deployed."
