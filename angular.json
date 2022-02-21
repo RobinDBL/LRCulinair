@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lrCulinair": {
+    "lr-culinair": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lrCulinair:build:production"
+              "browserTarget": "lr-culinair:build:production"
             },
             "development": {
-              "browserTarget": "lrCulinair:build:development"
+              "browserTarget": "lr-culinair:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lrCulinair:build"
+            "browserTarget": "lr-culinair:build"
           }
         },
         "test": {
@@ -106,11 +106,11 @@
         "deploy": {
           "builder": "ngx-deploy-docker:deploy",
           "options": {
-            "account": "RobinDBL"
+            "account": "robindbl"
           }
         }
       }
     }
   },
-  "defaultProject": "lrCulinair"
+  "defaultProject": "lr-culinair"
 }
