@@ -13,11 +13,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { WieComponent } from './wie/wie.component';
-import { FotosComponent } from './fotos/fotos.component';
 import { ContactComponent } from './contact/contact.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { FooterComponent } from './footer/footer.component';
+import { MenusComponent } from './menus/menus.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
     NavbarComponent,
     HomeComponent,
     WieComponent,
-    FotosComponent,
     ContactComponent,
-    CookiesComponent
+    CookiesComponent,
+    FooterComponent,
+    MenusComponent
   ],
   imports: [
     BrowserModule,
