@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
     WieComponent,
     FotosComponent,
     ContactComponent,
-    CookiesComponent
+    CookiesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
