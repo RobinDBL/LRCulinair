@@ -1,12 +1,12 @@
 <div *ngFor="let newsItem of newsItems" class="container row margin-top">
         <div class="col-md-6" *ngIf="newsItem.alignment ==='left'">
-            <img src="{{ newsItem.image }}" class="home_image">
+            <img src="{{ newsItem.image }}" class="home_image img-fluid">
         </div>
         <div class="col-md-6">
             <p>{{ newsItem.text }}</p>
         </div>
         <div class="col-md-6" *ngIf="newsItem.alignment ==='right'">
-            <img src="{{ newsItem.image }}" class="home_image">
+            <img src="{{ newsItem.image }}" class="home_image img-fluid">
         </div>
 </div>
 
