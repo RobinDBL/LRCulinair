@@ -27,6 +27,8 @@ export class ContactComponent implements OnInit {
 
   nameFormControl = new FormControl('', [Validators.required, Validators.minLength(5)]);
 
+  telephoneNumberFormControl = new FormControl('', [Validators.required, Validators.minLength(9)]);
+
   messageFormControl = new FormControl('', [Validators.required, Validators.minLength(10)]);
 
   matcher = new MyErrorStateMatcher();

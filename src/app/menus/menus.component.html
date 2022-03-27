@@ -1,1 +1,5 @@
-<img src="../../assets/images/menu.jpg" class="img-fluid">
+<app-featured-menu *ngIf="featured" [featuredMenu]="featuredMenu"></app-featured-menu>
+
+
+<app-menu *ngFor="let menu of menus" [menu]="menu"></app-menu>
+

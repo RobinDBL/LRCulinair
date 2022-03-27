@@ -38,6 +38,18 @@
                     Email is <strong>vereist</strong>
                 </mat-error>
             </mat-form-field>
+
+            <mat-form-field class="full-width form-input" appearance="fill">
+                <mat-label>Telefoonnummer</mat-label>
+                <input type="text" matInput [formControl]="telephoneNumberFormControl" [errorStateMatcher]="matcher"
+                placeholder="0123/45 67 89">
+                <mat-error *ngIf="telephoneNumberFormControl.hasError('minlength') && !emailFormControl.hasError('required')">
+                    Gelieve een geldig telefoonnummer in te voeren
+                </mat-error>
+                <mat-error *ngIf="telephoneNumberFormControl.hasError('required')">
+                    Telefoonnummer is <strong>vereist</strong>
+                </mat-error>
+            </mat-form-field>
             
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Typ hier uw bericht</mat-label>
@@ -47,6 +59,8 @@
                     Bericht is <strong>vereist</strong>
                 </mat-error>
             </mat-form-field>
+
+            <button mat-raised-button color="primary">Verstuur</button>
         </form>
     </div>
 </div>

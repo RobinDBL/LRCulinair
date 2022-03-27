@@ -1,0 +1,21 @@
+<mat-card (click)="cardClick()" class="col-md-8">
+    <div class="card-content">
+        <mat-card-title [innerHTML]="menu.titel"></mat-card-title>
+        <mat-icon class="restaurantMenu">restaurant_menu</mat-icon>
+        <div  *ngFor="let menuitem of menu.menucontent">
+            
+            <p [innerHTML]="menuitem" class="menucontent"></p>
+            
+            ***
+        </div>
+        <mat-icon class="restaurantMenu">restaurant_menu</mat-icon>
+        <mat-divider inset></mat-divider>
+        <mat-card-footer [innerHTML]="menu.prijs"></mat-card-footer>
+    </div>
+</mat-card>
+<div class="regular-text">
+    <p>Interesse?</p>
+    <a mat-raised-button color="primary" href="/contact">Neem contact op</a>
+
+    
+</div>
