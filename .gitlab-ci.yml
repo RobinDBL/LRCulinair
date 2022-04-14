@@ -35,11 +35,10 @@ build-job:       # This job runs in the build stage, which runs first.
 
 
 services:
-    - name: docker:19-dind
+    - name: docker:18.09.7-dind
     
 variables:
     DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://localhost:2375/
     # See https://github.com/docker-library/docker/pull/166
     DOCKER_TLS_CERTDIR: "/certs"
 
