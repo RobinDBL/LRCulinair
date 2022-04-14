@@ -18,7 +18,6 @@
 stages:          # List of stages for jobs, and their order of execution
   - build
   - package
-  - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
   image: robindbl/angular-cli
@@ -58,10 +57,3 @@ build-docker-container:
     - docker login -u robindbl -p bd0ddb2a-5b67-4ce2-8ad9-4dce3898d74a
     - docker build -t robindbl/lr-culinair:latest .
     - docker push robindbl/lr-culinair:latest
-
-
-deploy-job:      # This job runs in the deploy stage.
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
