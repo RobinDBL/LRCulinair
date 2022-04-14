@@ -36,11 +36,13 @@ build-job:       # This job runs in the build stage, which runs first.
 
 services:
     - name: docker:18.09.7-dind
+      entrypoint: ["env", "-u", "DOCKER_HOST"]
+      command: ["dockerd-entrypoint.sh"]
     
 variables:
     DOCKER_DRIVER: overlay2
     # See https://github.com/docker-library/docker/pull/166
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_CERTDIR: ""
 
 build-docker-container:
 
