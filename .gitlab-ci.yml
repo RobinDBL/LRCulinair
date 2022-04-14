@@ -55,9 +55,9 @@ build-docker-container:
     - job: build-job
       artifacts: true
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY/robindbl/lrculinair:latest .
-    - docker push $CI_REGISTRY/robindbl/lrculinair:latest
+    - docker login -u RobinDBL -p bd0ddb2a-5b67-4ce2-8ad9-4dce3898d74a
+    - docker build -t robindbl/lrculinair:latest .
+    - docker push robindbl/lrculinair:latest
 
 
 deploy-job:      # This job runs in the deploy stage.
