@@ -65,8 +65,10 @@ build-docker-container:
     - job: build-job
       artifacts: true
   script:
-  - IMAGE_NAME="robindbl/lr-culinair:latest"
-  - docker build . --tag $IMAGE_NAME
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/group/project/image:latest .
+    - docker push $CI_REGISTRY/group/project/image:latest
+
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
