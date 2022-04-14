@@ -56,8 +56,8 @@ build-docker-container:
       artifacts: true
   script:
     - docker login -u RobinDBL -p bd0ddb2a-5b67-4ce2-8ad9-4dce3898d74a
-    - docker build -t robindbl/lrculinair:latest .
-    - docker push robindbl/lrculinair:latest
+    - docker build -t robindbl/lr-culinair:latest .
+    - docker push robindbl/lr-culinair:latest
 
 
 deploy-job:      # This job runs in the deploy stage.
