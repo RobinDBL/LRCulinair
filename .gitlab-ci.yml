@@ -55,7 +55,7 @@ build-docker-container:
     - job: build-job
       artifacts: true
   script:
-    - docker login -u RobinDBL -p bd0ddb2a-5b67-4ce2-8ad9-4dce3898d74a
+    - docker login -u robindbl -p bd0ddb2a-5b67-4ce2-8ad9-4dce3898d74a
     - docker build -t robindbl/lr-culinair:latest .
     - docker push robindbl/lr-culinair:latest
 
