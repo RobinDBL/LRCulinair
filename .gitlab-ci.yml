@@ -35,7 +35,7 @@ build-job:       # This job runs in the build stage, which runs first.
 
 
 services:
-    - name: docker:dind
+    - name: docker:19-dind
       entrypoint: ["env", "-u", "DOCKER_HOST"]
       command: ["dockerd-entrypoint.sh"]
 variables:
