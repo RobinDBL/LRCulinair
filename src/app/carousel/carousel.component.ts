@@ -19,7 +19,7 @@ export class CarouselComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
 
-  images = ["../../assets/images/placeholder.png", "../../assets/images/placeholder.png", "../../assets/images/placeholder.png"]
+  images = ["../../assets/images/homepage_5.jpg", "../../assets/images/homepage_6.jpg", "../../assets/images/homepage_7.jpg"]
 
   @ViewChild('carousel', { static: true })
   carousel!: NgbCarousel;

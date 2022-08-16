@@ -45,9 +45,9 @@ export class MenusComponent implements OnInit {
       menucontent: 
         [
           "Aperitief receptie met aperitief bordje (3 hapjes) en 2 x 1 hapje (1u receptie)",
-          "Slaatje van gerookte zalm met garnalen en dressing OF <br> Serranoaham met meloen slaatje en dressing OF <br> Scampi met saffraan en fijne groentjes",
+          "Slaatje van gerookte zalm met garnalen en dressing OF <br> Serranoham met meloen slaatje en dressing OF <br> Scampi met saffraan en fijne groentjes",
           "Paprika soep",
-          "Varkenshaasje | champignonsaus | warme groentjes en gegratineerde aardappeltjes OF <br> Gegrilde chateaubriand | béarnaise en/of pepersaus | warme groentjes en verse frietjes (+5€)",
+          "Varkenshaasje | champignionsaus | warme groentjes en gegratineerde aardappeltjes OF <br> Gegrilde chateaubriand | béarnaise en/of pepersaus | warme groentjes en verse frietjes (+5€)",
           "Ijstaart met 2 sausjes (+2€) OF <br> Dessertbordje",
           "Koffie of thee met versnaperingen"
         ],
