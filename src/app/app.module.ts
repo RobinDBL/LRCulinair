@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { WieComponent } from './wie/wie.component';
 import { ContactComponent } from './contact/contact.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,7 +32,6 @@ import { DialogComponent } from './dialog/dialog.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    WieComponent,
     ContactComponent,
     CookiesComponent,
     FooterComponent,

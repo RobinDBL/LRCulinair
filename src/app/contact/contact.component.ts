@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { EmailService } from '../services/emailService.service';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -18,7 +19,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _emailService: EmailService) { }
 
   ngOnInit(): void {
   }
@@ -41,4 +42,8 @@ export class ContactComponent implements OnInit {
 
   markerOptions: google.maps.MarkerOptions = {draggable: false};
   markerPositions: google.maps.LatLngLiteral[] = [ this.center ];
+
+  sendEmail(): void {
+    this._emailService.sendEmail();
+  }
 }
