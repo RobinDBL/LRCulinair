@@ -2,7 +2,7 @@
 
 This is a website for a caterer 
 
-![Screenshot of finished product](/dist/lr-culinair/assets/images/screenshot.png)
+![Screenshot of finished product](/src/assets/images/screenshot.png)
 
 ## Technologies used
 
