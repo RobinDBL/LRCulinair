@@ -2,6 +2,8 @@
 
 This is a website for a caterer 
 
+![Screenshot of finished product](/dist/lr-culinair/assets/images/screenshot.png)
+
 ## Technologies used
 
 This website uses angular as a frontend.
