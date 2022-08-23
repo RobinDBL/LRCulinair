@@ -1,6 +1,6 @@
 # L&R culinair
 
-This is a website for a caterer 
+This is a website for a caterer. The website can be found on https://lrculinair.be 
 
 ![Screenshot of finished product](/src/assets/images/screenshot.png)
 
