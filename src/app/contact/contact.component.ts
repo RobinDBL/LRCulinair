@@ -44,6 +44,6 @@ export class ContactComponent implements OnInit {
   markerPositions: google.maps.LatLngLiteral[] = [ this.center ];
 
   sendEmail(): void {
-    this._emailService.sendEmail();
+    this._emailService.sendEmailToOwner(this.nameFormControl.value, this.emailFormControl.value, this.telephoneNumberFormControl.value, this.messageFormControl.value);
   }
 }
