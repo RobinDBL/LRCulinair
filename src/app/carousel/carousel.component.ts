@@ -19,7 +19,9 @@ export class CarouselComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
 
-  images = ["../../assets/images/homepage_5.jpg", "../../assets/images/homepage_6.jpg", "../../assets/images/homepage_7.jpg"]
+
+
+  images = ["../../assets/images/carousel_1.jpg", "../../assets/images/carousel_2.jpg", "../../assets/images/carousel_3.jpg", "../../assets/images/carousel_4.jpg", "../../assets/images/carousel_5.jpg", "../../assets/images/carousel_7.jpg", "../../assets/images/carousel_8.jpg", "../../assets/images/carousel_9.jpg", "../../assets/images/carousel_10.jpg", "../../assets/images/carousel_11.jpg", "../../assets/images/carousel_12.jpg", "../../assets/images/carousel_13.jpg", "../../assets/images/carousel_14.jpg", "../../assets/images/carousel_15.jpg", "../../assets/images/carousel_16.jpg"];
 
   @ViewChild('carousel', { static: true })
   carousel!: NgbCarousel;
