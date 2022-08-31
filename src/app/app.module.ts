@@ -1,6 +1,8 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { RouterModule } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -54,9 +56,12 @@ import { DialogComponent } from './dialog/dialog.component';
     MatButtonModule,
     MatDialogModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
+
   ],
   bootstrap: [AppComponent]
 })
