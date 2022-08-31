@@ -1,10 +1,15 @@
+<h1 class="center">Verwen uw gasten met heerlijk eten, zonder zorgen!</h1>
+<h2 class="center">Hebt u een feestje, communie, babyborrel, doopfeest, pensioen, BBQ...? <br> Wij koken aan huis!</h2>
+    
+<p class="center">Graag bespreken wij samen met u, uw wensen en budget. Alles wordt bereid met de beste zorg en verse producten.</p>
+
 <app-carousel></app-carousel>
 <div *ngFor="let newsItem of newsItems" class="container row margin-top">
         <div class="col-md-6" *ngIf="newsItem.alignment ==='left'">
             <img src="{{ newsItem.image }}" class="home_image img-fluid">
         </div>
         <div class="col-md-6">
-            <p>{{ newsItem.text }}</p>
+            <p [innerHtml]="newsItem.text"></p>
         </div>
         <div class="col-md-6" *ngIf="newsItem.alignment ==='right'">
             <img src="{{ newsItem.image }}" class="home_image img-fluid">
