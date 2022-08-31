@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
@@ -19,7 +20,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private _emailService: EmailService) { }
+  private _emailService!: EmailService;
+  private http!: HttpClient;
+  private baseUrl: string;
+
+  constructor(HttpClient: HttpClient) { 
+    this.http = HttpClient;
+    this._emailService = new EmailService(this.http);
+    this.baseUrl = window.location.origin
+   }
 
   ngOnInit(): void {
   }
@@ -43,7 +52,8 @@ export class ContactComponent implements OnInit {
   markerOptions: google.maps.MarkerOptions = {draggable: false};
   markerPositions: google.maps.LatLngLiteral[] = [ this.center ];
 
-  sendEmail(): void {
-    this._emailService.sendEmailToOwner(this.nameFormControl.value, this.emailFormControl.value, this.telephoneNumberFormControl.value, this.messageFormControl.value);
+  sendEmail(): void {  
+    this._emailService.sendEmail(this.nameFormControl.value, this.emailFormControl.value, this.telephoneNumberFormControl.value, this.messageFormControl.value);
+    window.location.href = this.baseUrl;
   }
 }

@@ -1,0 +1,7 @@
+{
+    "/mail": {
+        "target": "https://mailsender.blueservices.be",
+        "secure": "true",
+        "changeOrigin": "true"
+    }
+}
